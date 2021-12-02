@@ -1,0 +1,32 @@
+SELECT *
+FROM employees
+WHERE salary > ( SELECT salary
+				 FROM employees
+				 WHERE first_name = 'Sarah'
+					   AND last_name = 'Bell'
+			   );
+			   
+SELECT *
+FROM employees
+WHERE salary > ( SELECT salary
+				 FROM employees
+				 WHERE first_name = 'Sarah'
+					   AND last_name = 'Bell'
+			   )
+	  AND salary < ( SELECT salary
+				 	 FROM employees
+				 	 WHERE first_name = 'Lex'
+					   	   AND last_name = 'De Haan'
+			   );
+			   
+-- Ejercicio 5 Boletín 01
+
+SELECT salary, COUNT(*)
+FROM employees
+GROUP BY salary
+HAVING COUNT(*) = (SELECT MAX(valor)
+				  FROM ( SELECT COUNT(*) "valor"
+	   					 FROM employees
+	   				  	 GROUP BY salary
+	 					) datos
+				   );
