@@ -8,7 +8,10 @@ public class Main {
         int[] arr = new int [] {1, 2, 3};
 
         for(int a: arr){
-            System.out.println(a);
+            System.out.println(arr[0]);
+            System.out.println(arr[1]);
+            System.out.println(arr[3]);
+
         }
         System.out.println("Hola");
     }
