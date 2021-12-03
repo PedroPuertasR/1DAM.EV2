@@ -1,8 +1,79 @@
-h1{
-    width: 1000px;
-    height: 100px;
+.envoltorio {
+    width: 85%;
+    margin: 0 auto;
+    min-width: 650px;
+}
+.envoltorio header {
+    padding: 0px 3%;
+    justify-content: space-around;
+    align-content: center;
     text-align: center;
     font-family: 'Berlin Sans FB', Arial, sans-serif;
     border-radius: 10px;
+    background-color: red;
+    display: flex;
+}
+
+.envoltorio .contenido {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    top: -6px;
+}
+
+.envoltorio .contenido nav {
+    font-size: 15pt;
+    color: #fff;
+    width: 100%;
+    padding: 0px 3%;
+    background-color: black;
+    justify-content: space-around;
+    align-content: center;
+    text-align: center;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.envoltorio .contenido main {
+    width: 65%;
+    padding: 20px 3%;  
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+#cursiva{
+    font-style: italic;
+}
+
+h3{
+    line-height: 1.5cm;
+}
+
+.envoltorio footer {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+    background-color: black;
+    position: relative;
+    top: -6px;
+}
+
+.footerOp{
+    color: white;
+    line-height: 0.5cm;
+    font-style: normal;
+}
+
+.titulos{
+    align-self: center;
+    text-align: center;
     background-color: red;
 }
