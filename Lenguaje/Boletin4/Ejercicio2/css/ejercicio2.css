@@ -1,0 +1,18 @@
+p{
+    width: 800px;
+    height: 565px;
+    padding-top: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 0px white;
+    border-radius: 50px;
+    font-family: 'Kristen ITC', 'Berlin Sans FB', Arial;
+    text-align: center;
+    color: white;
+    font-size: 35pt;
+    text-transform: uppercase;
+    background-image: url(../img/fondo_jovenes.png), url(../img/fondo_trama.png);
+    background-size: 85%, cover;
+    background-repeat: no-repeat, repeat;
+    background-position: bottom, center;
+}

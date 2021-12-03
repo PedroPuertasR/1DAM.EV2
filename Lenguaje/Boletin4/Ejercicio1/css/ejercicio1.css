@@ -1,0 +1,18 @@
+@font-face {
+    font-family: fuenteP;
+    src: url(../fonts/DKLemonYellowSun.otf);
+}
+
+h1{
+    width: 1250px;
+    height: 250px;
+    text-align: center;
+    font-size: 35pt;
+    font-family: fuenteP, Arial, sans-serif;
+    color: rgb(29, 89, 255);
+    background-color: rgb(128, 195, 255);
+    border-color: rgb(29, 89, 255);
+    border-width: 5px;
+    border-radius: 20pt;
+    border-style: dotted;
+}
