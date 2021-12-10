@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 .envoltorio {
     width: 85%;
     margin: 0 auto;
@@ -19,22 +23,22 @@
     align-items: stretch;
     justify-content: space-between;
     flex-wrap: wrap;
-    position: relative;
     top: -6px;
 }
 
 .envoltorio .contenido nav {
     font-size: 15pt;
     color: #fff;
-    width: 100%;
-    padding: 0px 3%;
+    width: 35%;
+    padding: 50px;
     background-color: black;
     justify-content: space-around;
     align-content: center;
     text-align: center;
-    border-radius: 10px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
+}
+
+li{
+    list-style: none;
 }
 
 .envoltorio .contenido main {
