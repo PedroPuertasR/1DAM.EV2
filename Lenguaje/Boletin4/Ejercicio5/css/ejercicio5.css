@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(9, 108, 255);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.envoltorio{
+
+}
+
+.envoltorio header{
+    color: white;
+    align-content: center;
+    text-align: center;
+    font-size: 20pt;
+}
+
+.envoltorio .contenido{
+    align-items: stretch;
+}
+
+.envoltorio .contenido nav{
+    color: white;
+    background-color: rgb(108, 190, 0);
+    width: 150%;
+    font-size: 15pt;
+    align-content: center;
+}
+
+.envoltorio .contenido main{
+    background-color: white;
+    width: 30%;
+    align-content: center;
+    text-align: center;
+}
+
+li{
+    list-style: none;
+}
+
