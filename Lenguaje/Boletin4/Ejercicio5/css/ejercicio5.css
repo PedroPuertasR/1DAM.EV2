@@ -8,7 +8,9 @@ body{
 }
 
 .envoltorio{
-
+    width: 85%;
+    margin: 0 auto;
+    min-width: 650px;
 }
 
 .envoltorio header{
@@ -19,25 +21,53 @@ body{
 }
 
 .envoltorio .contenido{
+    display: flex;
     align-items: stretch;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
-.envoltorio .contenido nav{
+.envoltorio .menu nav{
     color: white;
     background-color: rgb(108, 190, 0);
-    width: 150%;
+    width: 100%;
     font-size: 15pt;
-    align-content: center;
+    align-content: flex-start;
+    padding: 0.2cm;
+}
+
+.envoltorio .contenido aside{
+    color: white;
+    width: 20%;
+    line-height: 1cm;
 }
 
 .envoltorio .contenido main{
     background-color: white;
-    width: 30%;
-    align-content: center;
+    width: 60%;
     text-align: center;
 }
 
 li{
     list-style: none;
+    color: white;
 }
 
+.anuncios{
+    flex-direction: column;
+    color: white;
+    width: 20%;
+}
+
+.publi{
+    background-color: white;
+    color: black;
+    border-radius: 15pt;
+}
+
+.envoltorio footer{
+    background-color: rgb(108, 190, 0);
+    width: 100%;
+    font-size: 15pt;
+    align-content: flex-end;
+}
