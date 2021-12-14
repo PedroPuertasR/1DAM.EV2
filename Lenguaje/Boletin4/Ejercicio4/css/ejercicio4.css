@@ -16,7 +16,7 @@ body{
     color: white;
     align-content: center;
     text-align: center;
-    font-size: 20pt;
+    font-size: 22pt;
     background-color: rgb(0, 183, 255);
     border-radius: 20pt;
     border-width: 0.1cm;
@@ -41,6 +41,11 @@ body{
     border-width: 0.1cm;
     border-style: solid;
     border-color: black;
+    font-size: 18pt;
+}
+
+.envoltorio .contenido main p{
+    font-size: 20pt;
 }
 
 .envoltorio .contenido .anuncio{
@@ -66,4 +71,7 @@ body{
     border-width: 0.1cm;
     border-style: solid;
     border-color: black;
+    margin-top: 0.2cm;
+    color: white;
+    font-size: 16pt;
 }
