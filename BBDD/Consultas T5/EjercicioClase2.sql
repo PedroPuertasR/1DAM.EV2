@@ -2,7 +2,7 @@
 -- el de llegada, la fecha y hora de salida y llegada y la duración.
 -- Se debe ordenar la salida por aeropuerto, ascendente, y duración, descendente.
 
-SELECT ae.nombre, aeh.nombre, salida, llegada, AGE(llegada, salida), TO_CHAR(salida, 'ID')
+SELECT ae.nombre, aeh.nombre, salida, llegada, AGE(llegada, salida)
 FROM aeropuerto ae JOIN vuelo v1 ON (ae.id_aeropuerto = desde)
 	 JOIN aeropuerto aeh ON (aeh.id_aeropuerto = hasta)
 WHERE AGE(llegada, salida) >= ALL (SELECT AGE(llegada, salida)
@@ -14,7 +14,7 @@ ORDER BY ae.nombre, AGE(llegada,salida) DESC;
 
 -- Corrección
 
-SELECT ae.nombre, aeh.nombre, salida, llegada, AGE(llegada, salida), TO_CHAR(salida, 'ID')
+SELECT ae.nombre, aeh.nombre, salida, llegada, AGE(llegada, salida)
 FROM aeropuerto ae JOIN vuelo v1 ON (ae.id_aeropuerto = desde)
 	 JOIN aeropuerto aeh ON (aeh.id_aeropuerto = hasta)
 WHERE AGE(llegada, salida) IN (SELECT AGE(llegada, salida)
