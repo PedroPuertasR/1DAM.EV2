@@ -8,7 +8,7 @@ body{
 }
 
 .envoltorio{
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
     min-width: 650px;
 }
@@ -39,13 +39,25 @@ body{
 .envoltorio .contenido aside{
     color: white;
     width: 20%;
-    line-height: 1cm;
+    line-height: 0.5cm;
+    padding-left: 1cm;
+    padding-right: 1cm;
+}
+
+.envoltorio .contenido aside p{
+    font-size: 12pt;
 }
 
 .envoltorio .contenido main{
     background-color: white;
     width: 60%;
-    text-align: center;
+    padding-left: 1cm;
+    padding-right: 1cm;
+    line-height: 0.5cm;
+}
+
+.envoltorio .contenido main p{
+    font-size: 14pt;
 }
 
 li{
@@ -57,12 +69,26 @@ li{
     flex-direction: column;
     color: white;
     width: 20%;
+    padding-left: 0.5cm;
+    padding-bottom: 0.8cm;
+    align-content: center;
+    text-align: center;
+}
+
+.anuncios img{
+    padding: 0.2cm;
 }
 
 .publi{
     background-color: white;
     color: black;
     border-radius: 15pt;
+    text-align: center;
+    padding-bottom: 3cm;
+    padding-left: -0.5cm;
+    padding-top: -2cm;
+    font-weight: bold;
+    font-size: 14pt;
 }
 
 .envoltorio footer{
@@ -70,4 +96,5 @@ li{
     width: 100%;
     font-size: 15pt;
     align-content: flex-end;
+    padding: 0.01cm;
 }
