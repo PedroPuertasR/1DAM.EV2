@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(51, 116, 255);
+}
+
+.envoltorio{
+    margin: 0 auto;
+    min-width: 650px;
+    width: 85%;
+}
+
+.envoltorio .contenido{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-top: 0.3cm;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.envoltorio .contenido .caja{
+    background-color: white;
+    border-radius: 20pt;
+    border-color: black;
+    border-style: solid;
+    text-align: center;
+    padding: 2cm;
+    margin: 0%;
+    width: 20%;
+}
