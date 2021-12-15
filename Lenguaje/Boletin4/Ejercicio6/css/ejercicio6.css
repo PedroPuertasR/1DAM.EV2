@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+
+.envoltorio{
+
+}
+
+.envoltorio .contenido{
+
+}
+
+.envoltorio nav{
+    position: fixed;
+    flex-wrap: wrap;
+}

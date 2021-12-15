@@ -15,10 +15,8 @@ body{
 
 .envoltorio .contenido{
     display: flex;
-    align-items: stretch;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
-    padding-top: 0.3cm;
     flex-wrap: wrap;
     text-align: center;
 }
@@ -29,7 +27,8 @@ body{
     border-color: black;
     border-style: solid;
     text-align: center;
-    padding: 2cm;
-    margin: 0%;
-    width: 20%;
+    padding: 1cm;
+    margin: 1cm;
+    flex-basis: 250px;
+    flex-grow: 0;
 }
