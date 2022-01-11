@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        *{
+            box-sizing: border-box;
+        }
+
+        nav, main{
+            width: 85%;
+            margin: 0 auto;
+        }
+
+        nav ul{
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul a{
+            text-decoration: none;
+            flex-grow: 1;
+            margin-right: 2px;
+        }
+
+        nav ul li{
+            background-color: red;
+            color: white;
+            text-align: center;
+            border-radius: 10px 10px 10px 10px;
+            padding: 15px;
+        }
+
+        nav ul li:hover, nav ul li.activa{
+            background-color: pink;
+        }
+
+        nav ul a:last-child{
+            margin-right: 0px;
+        }
+
+        main{
+            border: red solid 2px;
+            margin-top: 0;
+            border-top: 0px;
+        }
+
+        main section{
+            display: none;
+        }
+
+        main section:target{
+            display: inherit;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <a href="#primera">
+                <li>Primero</li>
+            </a>
+            <a href="#segunda">
+                <li class="activa">Segundo</li>
+            </a>
+            <a href="#tercera">
+                <li>Tercero</li>
+            </a>
+            <a href="#cuarta">
+                <li>Cuarto</li>
+            </a>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="primera">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit ad voluptate minus possimus reprehenderit
+            debitis voluptatibus? Et nisi iste est labore magni velit nam, maxime odit obcaecati alias expedita fugiat.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aliquid veniam nostrum, non officia
+            quibusdam beatae, architecto labore eveniet quos sequi odit a odio in laborum dolorem dignissimos autem
+            similique.
+        </section>
+
+        <section id="segunda">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit ad voluptate minus possimus reprehenderit
+            debitis voluptatibus? Et nisi iste est labore magni velit nam, maxime odit obcaecati alias expedita fugiat.
+            buuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu.
+        </section>
+
+        <section id="tercera">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit ad voluptate minus possimus reprehenderit
+            debitis voluptatibus? Et nisi iste est labore magni velit nam, maxime odit obcaecati alias expedita fugiat.
+            Lorem eyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy.
+        </section>
+
+        <section id="cuarta">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit ad voluptate minus possimus reprehenderit
+            debitis voluptatibus? Et nisi iste est labore magni velit nam, maxime odit obcaecati alias expedita fugiat.
+            Lorem ipsum pipopipoipoipoippipipoipipo.
+        </section>
+
+    </main>
+
+</body>
+
+</html>
