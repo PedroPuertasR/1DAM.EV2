@@ -1,32 +1,32 @@
 CREATE TABLE libro(
-	isbn				char(13),
-	titulo				varchar,
-	dni					char(9),
+	isbn				varchar(13),
+	titulo				text,
+	dni_autor			varchar(9),
 	cod_genero			smallint,
 	cod_editorial		smallint
 );
 
 CREATE TABLE autor(
-	dni					char(9),
+	dni					varchar(9),
 	nombre				varchar,
 	nacionalidad		varchar
 );
 
 CREATE TABLE editorial(
-	cod_editorial		serial,
+	cod_editorial		smallserial,
 	nombre				varchar,
 	direccion			varchar,
 	poblacion			varchar
 );
 
 CREATE TABLE genero(
-	id_genero			serial,
+	id_genero			smallserial,
 	nombre				varchar,
-	descripcion			varchar
+	descripcion			text
 );
 
 CREATE TABLE edicion(
-	isbn				char(13),
+	isbn				varchar(13),
 	fecha_publicacion	date,
-	cantidad			smallint
+	cantidad			int
 );
