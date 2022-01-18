@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @keyframes animaCaja{
+            0%{
+                background-color: red;
+                top: 0px;
+                left: 0px;
+            }
+            25%{
+                background-color: green;
+                top: 0px;
+                left: 200px;
+            }
+            50%{
+                background-color: blue;
+                top: 200px;
+                left: 0px;
+            }
+            100%{
+                background-color: pink;
+                top: 0px;
+                left: 0px;
+            }
+        }
+
+        body{
+
+        }
+
+        div{
+            position: relative;
+            width: 200px;
+            height: 100px;
+            margin-left: 100px;
+            background-color: red;
+            color: white;
+            animation: animaCaja 3s alternate;
+            animation-delay: 1.5s;
+            animation-play-state: running;
+            animation-fill-mode: both;
+        }
+
+        div:hover{
+            animation-play-state: paused;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div><h1>Hola que tal</h1></div>
+</body>
+</html>
