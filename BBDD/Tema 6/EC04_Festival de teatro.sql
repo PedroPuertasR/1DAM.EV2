@@ -1,3 +1,12 @@
+DROP TABLE IF EXISTS precio;
+DROP TABLE IF EXISTS entradas;
+DROP TABLE IF EXISTS invitados;
+DROP TABLE IF EXISTS exhibe;
+DROP TABLE IF EXISTS teatros;
+DROP TABLE IF EXISTS obras;
+DROP TABLE IF EXISTS asiento_tipos;
+DROP TABLE IF EXISTS tipos_asientos;
+
 CREATE TABLE invitados(
 	nro_invitado		serial,
 	nombre				varchar(50) NOT NULL,
@@ -41,9 +50,10 @@ CREATE TABLE tipos_asientos(
 CREATE TABLE asiento_tipos(
 	nro_asiento			integer,
 	tipo				smallint,
-	CONSTRAINT pk_asiento_tipos PRIMARY KEY (nro_asiento),
-	CONSTRAINT ck_nro_asiento_cant_asientos CHECK (LENGTH(nro_asiento) = cant_asientos.teatros)
+	CONSTRAINT pk_asiento_tipos PRIMARY KEY (nro_asiento)
 );
+
+ALTER TABLE asiento_tipos ADD CONSTRAINT fk_asiento_tipos_tipos_asientos FOREIGN KEY (tipo) REFERENCES tipos_asientos ON DELETE CASCADE;
 
 CREATE TABLE precio(
 	cod_teat			smallint,
@@ -53,7 +63,8 @@ CREATE TABLE precio(
 	CONSTRAINT pk_precio PRIMARY KEY (cod_teat, fecha, tipo)
 );
 
-ALTER TABLE asiento_tipos ADD CONSTRAINT fk_asiento_tipos_tipos_asientos FOREIGN KEY (tipo) REFERENCES (tipos_asientos) ON DELETE CASCADE;
+ALTER TABLE precio ADD CONSTRAINT fk_precio_exhibe_cod_teatro FOREIGN KEY (cod_teat, fecha) REFERENCES exhibe ON DELETE CASCADE;
+ALTER TABLE precio ADD CONSTRAINT fk_precio_tipos_asientos FOREIGN KEY (tipo) REFERENCES tipos_asientos ON DELETE SET NULL;
 
 CREATE TABLE entradas(
 	cod_teat			smallint,
@@ -63,11 +74,6 @@ CREATE TABLE entradas(
 	CONSTRAINT pk_entradas PRIMARY KEY (cod_teat, fecha, nro_asiento)
 );
 
-ALTER TABLE precio ADD CONSTRAINT fk_precio_exhibe_cod_teatro FOREIGN KEY (cod_teat) REFERENCES cod_teat.exhibe ON DELETE CASCADE;
-ALTER TABLE precio ADD CONSTRAINT fk_precio_exhibe_fecha FOREIGN KEY (fecha) REFERENCES fecha.exhibe ON DELETE SET NULL;
-ALTER TABLE precio ADD CONSTRAINT fk_precio_tipos_asientos FOREIGN KEY (tipo) REFERENCES tipos_asientos ON DELETE SET NULL;
-
-ALTER TABLE entradas ADD CONSTRAINT fk_entradas_exhibe_cod_teatro FOREIGN KEY (cod_teat) REFERENCES cod_teat.exhibe ON DELETE CASCADE;
-ALTER TABLE entradas ADD CONSTRAINT fk_entradas_exhibe_fecha FOREIGN KEY (fecha) REFERENCES fecha.exhibe ON DELETE SET NULL;
-ALTER TABLE entradas ADD CONSTRAINT fk_entradas_asientos_tipos FOREIGN KEY (nro_asiento) REFERENCES asientos_tipos;
+ALTER TABLE entradas ADD CONSTRAINT fk_entradas_exhibe_cod_teatro FOREIGN KEY (cod_teat, fecha) REFERENCES exhibe ON DELETE CASCADE;
+ALTER TABLE entradas ADD CONSTRAINT fk_entradas_asientos_tipos FOREIGN KEY (nro_asiento) REFERENCES asiento_tipos;
 ALTER TABLE entradas ADD CONSTRAINT fk_entradas_invitados FOREIGN KEY (nro_invit) REFERENCES invitados ON DELETE SET NULL;
