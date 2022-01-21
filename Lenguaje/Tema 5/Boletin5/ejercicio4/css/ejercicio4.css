@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+
+nav{
+    width: 85%;
+    margin: 0 auto;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+}
+
+nav ul li:hover{
+    background-color: gray;
+}
