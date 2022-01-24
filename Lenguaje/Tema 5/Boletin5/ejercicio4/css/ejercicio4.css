@@ -16,6 +16,19 @@ nav ul{
     flex-direction: column;
 }
 
-nav ul li:hover{
-    background-color: gray;
+nav ul li{
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li .imgtop{
+    display: none;
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+nav ul li:hover .imgtop{
+    display: inline;
 }
