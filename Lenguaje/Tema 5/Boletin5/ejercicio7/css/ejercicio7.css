@@ -1,0 +1,75 @@
+*{
+    box-sizing: border-box;
+}
+
+body, ul, li, a, div, nav{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: linear-gradient(90deg,rgb(106, 19, 205), rgb(81, 136, 157)50%, rgb(193, 95, 112));
+    background-repeat: inherit;
+}
+
+nav{
+    width: 85%;
+    margin: 0 auto;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav ul li{
+    position: relative;
+    display: inline-block;
+    width: 20%;
+    animation-play-state: paused;
+}
+
+@keyframes animaCaja{
+    0%{
+        transform: scaleY(0)
+      }
+    80%{
+        transform: scaleY(1.1)
+      }
+    100%{
+        transform: scaleY(1)
+    }
+}
+
+nav ul a:hover{
+    background-color: white;
+    color: black;
+}
+
+nav ul a{
+    display: block;
+    width: 100%;
+    height: inherit;
+    text-align: center;
+    text-decoration: none;
+    line-height: 50px;
+    color: white;
+    background-color: black;
+}
+
+.submenu{
+    position: absolute;
+    display: none;
+    width: 100%;
+    float: inherit;
+}
+
+.submenu ul li{
+    display: block;
+    width: 100%;
+}
+
+nav ul li:hover .submenu{
+    display: block;
+    animation-play-state: running;
+    animation: animaCaja 0.5s ease;
+}
