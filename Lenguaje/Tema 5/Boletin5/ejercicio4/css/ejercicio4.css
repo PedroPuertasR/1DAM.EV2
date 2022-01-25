@@ -19,6 +19,7 @@ nav ul{
 nav ul li{
     position: relative;
     display: inline-block;
+    width: 50px;
 }
 
 nav ul li .imgtop{
