@@ -63,7 +63,9 @@ nav ul li{
 
 .cuarto:hover{
     background-image: url("../img/visualizarCompuesto.png");
-    background-position: 50px;
+    width: 100px;
+    height: 50px;
+    background-position: 0px;
 }
 
 .quinto{
