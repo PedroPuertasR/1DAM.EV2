@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ejercicio 8</title>
+
+   <style type="text/css">
+      .acordeonvertical>ul {
+         margin: 0;
+         padding: 0;
+         list-style: none;
+         width: 300px;
+      }
+
+      .acordeonvertical>ul>li {
+         display: block;
+         overflow: hidden;
+         margin: 0;
+         padding: 0;
+         list-style: none;
+         height: 30px;
+         width: 300px;
+         background-color: rgb(215, 230, 245);
+         border-radius: 7px;
+         transition: height 0.3s ease-in-out;
+      }
+
+      .acordeonvertical>ul>li>ul {
+         display: block;
+         margin: 0;
+         padding: 10px;
+         height: 19px;
+         border-top: #f0f0f0 1px solid;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 80%;
+         color: #000;
+         background: rgb(185, 205, 225);
+      }
+
+      .acordeonvertical>ul>li>ul {
+         margin: 0;
+         overflow: auto;
+         padding: 10px;
+         height: 150px;
+      }
+
+      .acordeonvertical>ul>li:hover {
+         height: 150px;
+      }
+
+      .acordeonvertical>ul>li:hover>ul {
+         color: #fff;
+         background: rgb (125, 165, 205);
+         font-size: 80%;
+      }
+
+      .acordeonvertical>ul>li>ul:hover {
+         cursor: pointer;
+      }
+
+      a {
+         text-decoration: none;
+         color: #0060B6;
+      }
+
+      a:hover {
+         color: #00A0C6;
+         
+         text-decoration: none;
+         cursor: pointer;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="acordeonvertical">
+      <ul>
+         <li><a href="#">Tienda</a>
+
+            <ul>
+
+               <li><a href="#">Primera mano</a></li>
+               <li><a href="#">Segunda mano</a></li>
+               <li><a href="#">Con taras</a></li>
+               <li><a href="#">Liquidación</a></li>
+               <li><a href="#">Robado</a></li>
+
+            </ul>
+
+         </li>
+         <li><a href="#">Donaciones</a>
+
+            <ul>
+
+               <li><a href="#">Paypal</a></li>
+               <li><a href="#">Tarjeta de crédito</a></li>
+               <li><a href="#">Tarjeta de débito</a></li>
+               <li><a href="#">Tarjeta robada</a></li>
+               <li><a href="#">Abuelo senil</a></li>
+
+            </ul>
+
+         </li>
+         <li><a href="#">Contacto</a>
+
+            <ul>
+
+               <li><a href="#">Gmail</a></li>
+               <li><a href="#">Paloma mensajera</a></li>
+               <li><a href="#">Fotolog</a></li>
+               <li><a href="#">MSN</a></li>
+               <li><a href="#">Tuenti</a></li>
+
+            </ul>
+
+         </li>
+         <li><a href="#">Quiénes somos</a>
+
+            <ul>
+
+               <li><a href="#">Donatelo</a></li>
+               <li><a href="#">Miguel Ángel</a></li>
+               <li><a href="#">Rafael</a></li>
+               <li><a href="#">Leonardo</a></li>
+               <li><a href="#">El maestro rata</a></li>
+
+            </ul>
+
+         </li>
+      </ul>
+   </div>
+</body>
+
+</html>

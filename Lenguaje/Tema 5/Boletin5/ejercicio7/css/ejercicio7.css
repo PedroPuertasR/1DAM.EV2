@@ -12,14 +12,14 @@ nav{
     margin: 0 auto;
 }
 
-nav ul{ /*cualquier ul descendiente directo*/
+nav ul{
     list-style-type: none;
     margin-bottom: 0px;
     padding-left: 0px;
 }
 
 
-nav > ul{ /* cualquier ul que sea hijo*/
+nav > ul{
     display: flex;
     justify-content: space-between;
 }
@@ -33,14 +33,14 @@ nav > ul li{
     text-align: center;
 }
 
-nav>ul>li li /*cualquier li descendiente de un li, descendiente de un ul y que sea hijo del nav, coge los li secundarios*/{
+nav>ul>li li{
     height: 0px;
     overflow: hidden;
     border-width: 0px;
     transition: all 0.5s;
 }
 
-nav>ul li:hover li{ /*li hijos de un li en hover que sea hijo de un menú*/
+nav>ul li:hover li{
     height: 40px;
     text-align: center;
     line-height: -20%;

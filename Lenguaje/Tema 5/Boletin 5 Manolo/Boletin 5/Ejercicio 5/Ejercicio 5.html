@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        nav,
+        main {
+            width: 100%;
+            margin: auto;
+        }
+
+        nav {
+            width: 100%;
+            margin: 0 auto;
+            background-color: rgb(19, 82, 219);
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            background-color: rgb(11, 195, 228);
+            padding: 20px;
+            width: 100%;
+            border: 1px white solid;
+            text-align: center;
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+
+
+        .centrar {
+            margin-top: 10px;
+        }
+
+
+
+        nav li:hover {
+            background-color: white;
+            color: black;
+        }
+
+        nav li:hover a {
+            color: black;
+        }
+
+        #inici:target a {
+            color: black;
+        }
+
+        /*
+       section:target{
+            display: inherit;
+            border: red solid 2px;
+            border-top-width: 0px;
+        }
+
+       #quienes:target{
+           background-color: white;
+       }
+
+       #quienes:target a{
+           color: black;
+       }
+
+       #donde:target{
+           background-color: white;
+       }
+
+       #donde:target a{
+           color: black;
+       }
+
+       #noticias:target{
+           background-color: white;
+       }
+
+       #noticias:target a{
+           color: black;
+       }
+
+       #descargas:target{
+           background-color: white;
+       }
+
+       #descargas:target a{
+           color: black;
+       }
+
+       #galeria:target{
+           background-color: white;
+       }
+
+       #galeria:target a{
+           color: black;
+       }
+
+       #contacto:target{
+           background-color: white;
+       }
+
+       #contacto:target a{
+           color: black;
+       }*/
+
+        ul {
+
+            margin-bottom: 0px;
+        }
+
+        nav ul a:last-child {
+            margin-right: 0px;
+        }
+
+        main section {
+            display: none;
+        }
+
+        main section:target {
+            display: inherit;
+            border: blue solid 2px;
+            border-top-width: 0px;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+
+        <ul>
+
+            <li id="inici" class="centrar"><a href="#inicio">Inicio</a></li>
+            <li id="quiene" class="centrar"><a href="#quienes">Quienes somos</a></li>
+            <li id="dond" class="centrar"><a href="#donde">Dónde estamos</a></li>
+            <li id="noticia" class="centrar"><a href="#noticias">Noticias</a></li>
+            <li id="descarga" class="centrar"><a href="#descargas">Descargas</a></li>
+            <li id="galeri" class="centrar"><a href="#galeria">Galería de fotos</a></li>
+            <li id="contact" class="centrar"><a href="#contacto">Contacto</a></li>
+
+        </ul>
+
+    </nav>
+
+    <main>
+        <section id="inicio">Primera Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ipsam aliquid
+            iusto perferendis,
+            officiis at provident fugiat amet iure a dolore! Repellendus corporis pariatur iste. Aliquid explicabo atque
+            dolorem itaque
+        </section>
+
+        <section id="quienes">Segunda Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ipsam aliquid
+            iusto perferendis,
+            officiis at provident fugiat amet iure a dolore! Repellendus corporis pariatur iste. Aliquid explicabo atque
+            dolorem itaque
+        </section>
+
+        <section id="donde">Tercera Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ipsam aliquid
+            iusto perferendis,
+            officiis at provident fugiat amet iure a dolore! Repellendus corporis pariatur iste. Aliquid explicabo atque
+            dolorem itaque
+        </section>
+
+        <section id="noticias">Cuarta Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ipsam aliquid
+            iusto perferendis,
+            officiis at provident fugiat amet iure a dolore! Repellendus corporis pariatur iste. Aliquid explicabo atque
+            dolorem itaque
+        </section>
+
+        <section id="descargas">Quinta Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ipsam aliquid
+            iusto perferendis,
+            officiis at provident fugiat amet iure a dolore! Repellendus corporis pariatur iste. Aliquid explicabo atque
+            dolorem itaque
+        </section>
+
+        <section id="galeria">Sexta Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ipsam aliquid
+            iusto perferendis,
+            officiis at provident fugiat amet iure a dolore! Repellendus corporis pariatur iste. Aliquid explicabo atque
+            dolorem itaque
+        </section>
+
+        <section id="contacto">Séptima Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ipsam aliquid
+            iusto perferendis,
+            officiis at provident fugiat amet iure a dolore! Repellendus corporis pariatur iste. Aliquid explicabo atque
+            dolorem itaque
+        </section>
+    </main>
+
+</body>
+
+</html>

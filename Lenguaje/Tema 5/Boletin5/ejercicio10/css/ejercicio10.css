@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+}
+
+nav{
+    width: 85%;
+    margin: 0 auto;
+}
+
+body{
+    background-color: rgb(0, 209, 255);
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li{
+    position: relative;
+    width: 100px;
+}
+
+.primero{
+    width: 50px;
+    height: 50px;
+    background-position: 0px;
+    background-image: url("../img/inicioCompuesto.png");
+    animation-play-state: paused;
+}
+
+.primero:hover{
+    animation: animaCaja 0.5s forwards;
+    animation-play-state: running;
+}
+
+.primero li{
+    height: 0px;
+    overflow: hidden;
+    border-width: 0px;
+    background-color: black;
+    color: white;
+    animation: mostrarMenu 1s none;
+}
+
+.primero:hover li{
+    height: 40px;
+    left: 10px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.primero>ul>.segundo{
+    height: 0px;
+    overflow: hidden;
+    border-width: 0px;
+    transition: all 0.5s;
+    background-color: black;
+    color: white;
+}
+
+.primero>ul>.segundo>li:hover{
+    height: 40px;
+    text-align: center;
+    line-height: -20%;
+    padding-top: 20px;
+}
+
+@keyframes mostrarMenu {
+    0%{
+        opacity: 0%;
+    }
+    99%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+@keyframes animaCaja{
+    0%{
+        transform: rotateZ(0deg);
+        transform: scale(100%);
+    }
+
+    50%{
+        transform: scale(0%);
+        background-position: 0px;
+        transform: rotateZ(180deg);
+    }
+
+    60%{
+        transform: scale(20%);
+        background-position: 50px;
+        transform: rotateZ(200deg);
+    }
+
+    100%{
+        transform: rotateZ(360deg);
+        transform: scale(100%);
+        background-position: 50px;
+    }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+    <style>
+          *{
+              margin:0;
+              padding: 0;
+          }
+
+       
+          header {
+	margin-top:10px;
+    width: 100%;
+    overflow: hidden;
+    height: 150px;
+    position: relative;
+}
+
+nav {
+    top:-20px;
+    position: absolute;
+    left:0;
+    right:0;
+	margin:20px auto;
+	max-width:1000px;
+	width:90%;
+}
+
+nav ul {
+	list-style:none;
+}
+
+nav > ul {
+	display:table;
+	width:100%;
+	background:#000;
+	position:relative;
+}
+
+nav > ul li {
+	display:table-cell;
+}
+
+/*Sub-menu*/
+nav > ul > li:hover > ul {
+	display:block;
+	height:100%;
+}
+
+nav > ul > li > ul {
+	display:block;
+	position:absolute;
+	background:red;
+	left:0;
+	right:0;
+	overflow:hidden;
+	height:0%;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+nav > ul li a {
+	color:#fff;
+	display:block;
+	line-height:20px;
+	padding:20px;
+	position: relative;
+	text-align:center;
+	text-decoration:none;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    
+    <header>
+
+        <nav>
+
+            <ul>
+        
+      
+                <li><a href="#">Tienda</a>
+                
+                    <ul>
+    
+                        <li><a href="#">Primera mano</a></li>
+                        <li><a href="#">Segunda mano</a></li>
+                        <li><a href="#">Con taras</a></li>
+                        <li><a href="#">Liquidación</a></li>
+                        <li><a href="#">Robado</a></li>
+    
+                    </ul>
+                
+                </li>
+                <li><a href="#">Donaciones</a>
+                
+                    <ul>
+    
+                        <li><a href="#">Paypal</a></li>
+                        <li><a href="#">Tarjeta de crédito</a></li>
+                        <li><a href="#">Tarjeta de débito</a></li>
+                        <li><a href="#">Tarjeta robada</a></li>
+                        <li><a href="#">Abuelo senil</a></li>
+    
+                    </ul>
+    
+                </li>
+                <li><a href="#">Contacto</a>
+                
+                    <ul>
+    
+                        <li><a href="#">Gmail</a></li>
+                        <li><a href="#">Paloma mensajera</a></li>
+                        <li><a href="#">Folog</a></li>
+                        <li><a href="#">MSN</a></li>
+                        <li><a href="#">Tuenti</a></li>
+    
+                    </ul>
+                
+                </li>
+                <li><a href="#">Quiénes somos</a>
+                
+                    <ul>
+    
+                        <li><a href="#">Donatelo</a></li>
+                        <li><a href="#">Miguel Ángel</a></li>
+                        <li><a href="#">Rafael</a></li>
+                        <li><a href="#">Leonardo</a></li>
+                        <li><a href="#">El maestro rata</a></li>
+    
+                    </ul>
+                
+                </li>
+             
+    
+    
+            </ul>
+
+        </nav>
+        
+    </header>
+
+
+</body>
+</html>
