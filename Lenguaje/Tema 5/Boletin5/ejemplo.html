@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        nav{
+            width: 85%;
+            margin: 0 auto;
+        }
+
+        nav ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav ul li{
+            position: relative;
+            width: 100px;
+        }
+
+        .primero{
+            width: 50px;
+            height: 50px;
+            background-image: url("inicioCompuesto.png");
+            background-position: 0px;
+        }
+
+        .primero:hover{
+            background-image: url("inicioCompuesto.png");
+            width: 50px;
+            height: 50px;
+            background-position: 50px;
+        }
+
+        .primero .segundo{
+            height: 0px;
+            overflow: hidden;
+            border-width: 0px;
+            transition: all 0.5s;
+            background-color: black;
+            color: white;
+        }
+
+        .primero:hover .segundo{
+            height: 60px;
+            overflow: visible;
+            display: inline-block;
+            margin-top: 50px;
+            line-height: 0.5cm;
+        }
+    </style>
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="primero">
+                <ul class="segundo">
+                    <li>Ejemplo 1</li>
+                    <li>Ejemplo 2</li>
+                    <li>Ejemplo 3</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
