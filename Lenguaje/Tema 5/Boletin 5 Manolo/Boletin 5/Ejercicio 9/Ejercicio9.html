@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+    <style>
+    
+    nav ul{
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+       }
+
+       nav ul li{
+        background-color: lightcoral;
+        flex-grow: 1;
+        text-align: center;
+        padding: 20px;
+        border: 1px white solid;
+      
+       }
+
+     
+
+       nav ul li{
+        background-color: rgb(216, 206, 206);
+        text-align: center;
+        padding: 20px 10px 20px 10px;
+        border:groove;
+        display: flexbox;
+        
+        width: 100px;
+        
+        background-size: 130px;
+       }
+
+       .logo{
+           background-image: url(img/logo.JPG);
+           background-repeat: no-repeat;
+           width: 20px;
+           height: 50px;
+       }
+
+       nav > ul > div > li:hover{
+        display: block;
+    overflow:hidden;
+    animation-duration: 2s;
+  animation-name: slidein;
+       }
+
+       @keyframes slidein {
+  from {
+    width: 20px;
+  }
+
+  to {
+    width: 105px;
+  }
+}
+
+
+
+    
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <ul>
+
+       <div>
+        <li class="logo"><a href="#"></a></li>
+       </div>
+            
+        
+
+       
+           
+                <li><a href="#">SOFTWARE</a></li>
+                <li><a href="#">OPERATOR</a></li>
+                <li><a href="#">UNIFI</a></li>
+                <li><a href="#">ULABS</a></li>
+                <li><a href="#">PRODUCTS</a></li>
+                <li><a href="#">BUY</a></li>
+            
+
+        
+      
+           
+                <li><a href="#">DOWNLOADS</a></li>
+                <li><a href="#">SUPPORT</a></li>
+                <li><a href="#">COMMUNITY</a></li>
+            </ul>
+        
+
+    </nav>
+
+
+</body>
+</html>

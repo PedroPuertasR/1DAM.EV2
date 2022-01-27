@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <style type="text/css">
+        nav {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav ul li {
+            background-color: rgb(216, 206, 206);
+            text-align: center;
+            padding: 20px 10px 20px 10px;
+            border: groove;
+            display: flexbox;
+            width: 100px;
+            background-repeat: no-repeat;
+            background-size: 130px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+
+        li:hover {
+            background-image: url(img/iconos.jpg);
+            filter: drop-shadow(0px 0px 6px #03c2ff);
+        }
+
+        .segunda {
+            background-position-y: -60px;
+            filter: drop-shadow(0px 0px 6px #0ad614);
+        }
+
+        .tercera {
+            background-position: 0px;
+            filter: drop-shadow(0px 0px 6px #eb0e0e);
+        }
+
+        .cuarta {
+            background-position-y: -195px;
+            filter: drop-shadow(0px 0px 6px #e3f309);
+        }
+
+        #quinta {
+            background-position-y: -250px;
+            filter: drop-shadow(0px 0px 6px #f703ff);
+        }
+
+        li:hover a {
+            color: red;
+            font-weight: bold;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+
+            <li><a href="#">Inicio</a></li>
+            <li class="segunda"><a href="#">Nuevo</a></li>
+            <li class="tercera"><a href="#">Editar</a></li>
+            <li class="cuarta"><a href="#">Visualizar</a></li>
+            <li id="quinta"><a href="#">Imagen</a></li>
+
+        </ul>
+    </nav>
+
+</body>
+
+</html>
