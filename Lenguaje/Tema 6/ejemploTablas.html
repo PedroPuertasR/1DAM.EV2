@@ -16,6 +16,7 @@
             width: 500px;
             border: 1px solid black;
             border-collapse: collapse;
+            caption-side: bottom;
         }
 
         td{
@@ -24,45 +25,56 @@
             text-align: center;
         }
 
+        colgroup#puntuacion{
+            background-color: lightblue;
+        }
+
     </style>
 
 </head>
 <body>
-    <table>
+    <table summary= "mis canciones favoritas">
+        <caption>Tabla 1. Mejores canciones</caption>
+        <colgroup span="2"></colgroup>
+        <colgroup id="puntuacion" span="1"></colgroup>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Autor</th>
+                <th>Puntuación</th>
+            </tr>
+        </thead>
 
-        <tr>
-            <td colspan="3">Clasificación</td>
-        </tr>
+        <tbody>
+            <tr>
+                <td>I feel it</td>
+                <td rowspan="2">Jon Bellion</td>
+                <td>10</td>
+            </tr>
+    
+            <tr>
+                <td>JT</td>
+                <td>8</td>
+            </tr>
+    
+            <tr>
+                <td>Industry Baby</td>
+                <td>Lil Nas X</td>
+                <td>10</td>
+            </tr>
+    
+            <tr>
+                <td>Circles</td>
+                <td>Post Malone</td>
+                <td>9</td>
+            </tr>
+        </tbody>
 
-        <tr>
-            <td>Nombre</td>
-            <td>Autor</td>
-            <td>Puntuación</td>
-        </tr>
-
-        <tr>
-            <td>I feel it</td>
-            <td rowspan="2">Jon Bellion</td>
-            <td>10</td>
-        </tr>
-
-        <tr>
-            <td>JT</td>
-            <td>8</td>
-        </tr>
-
-        <tr>
-            <td>Industry Baby</td>
-            <td>Lil Nas X</td>
-            <td>10</td>
-        </tr>
-
-        <tr>
-            <td>Circles</td>
-            <td>Post Malone</td>
-            <td>9</td>
-        </tr>
-
+        <tfoot>
+            <tr>
+                <td colspan="3">Tabla elaborada por Pedro Puertas</td>
+            </tr>
+        </tfoot>
     </table>
 </body>
 </html>
