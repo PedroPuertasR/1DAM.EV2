@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: "robotoRegular";
+            src: url(fonts/roboto-regular_[allfont.es].ttf);
+        }
+
+        table{
+            width: 80%;
+            border-collapse: collapse;
+            caption-side: bottom;
+            font-family: "robotoRegular", Arial, sans-serif, helvetica;
+        }
+
+        thead tr td{
+            border-bottom: 2px solid red;
+            border-top: 1px solid black;
+        }
+
+        tbody:first-child{
+            border-top: 2px solid red;
+        }
+
+        tbody tr td:nth-child(2){
+            width: 15%;
+        }
+
+        tbody tr:nth-child(odd){
+            background-color: lightgrey;
+        }
+
+        td{
+            text-align: center;
+            border-right: 0px;
+        }
+
+        img{
+            width: 10%;
+        }
+
+        .primeros{
+            border-left: 3px solid green;
+        }
+
+    </style>
+
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td></td>
+                <td>EQUIPOS</td>
+                <td>PT</td>
+                <td>PJ</td>
+                <td>PG</td>
+                <td>PE</td>
+                <td>PP</td>
+                <td>GF</td>
+                <td>GC</td>
+                <td>PT</td>
+                <td>PJ</td>
+                <td>PG</td>
+                <td>PE</td>
+                <td>PP</td>
+                <td>GF</td>
+                <td>GC</td>
+                <td>PT</td>
+                <td>PJ</td>
+                <td>PG</td>
+                <td>PE</td>
+                <td>PP</td>
+                <td>GF</td>
+                <td>GC</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td class="primeros">1</td>
+                <td><img src="img/fcb.png" alt="Escudo del Barcelona"> Barcelona</td>
+                <td>54</td>
+                <td>24</td>
+                <td>16</td>
+                <td>6</td>
+                <td>2</td>
+                <td>61</td>
+                <td>23</td>
+                <td>30</td>
+                <td>13</td>
+                <td>9</td>
+                <td>3</td>
+                <td>1</td>
+                <td>39</td>
+                <td>15</td>
+                <td>24</td>
+                <td>11</td>
+                <td>7</td>
+                <td>3</td>
+                <td>1</td>
+                <td>22</td>
+                <td>8</td>
+            </tr>
+
+            <tr>
+                <td class="primeros">2</td>
+                <td><img src="img/atm.png" alt="Escudo del Atlético">Atlético</td>
+                <td>47</td>
+                <td>24</td>
+                <td>13</td>
+                <td>8</td>
+                <td>3</td>
+                <td>34</td>
+                <td>17</td>
+                <td>29</td>
+                <td>12</td>
+                <td>9</td>
+                <td>2</td>
+                <td>1</td>
+                <td>20</td>
+                <td>7</td>
+                <td>18</td>
+                <td>12</td>
+                <td>4</td>
+                <td>6</td>
+                <td>2</td>
+                <td>14</td>
+                <td>10</td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>
