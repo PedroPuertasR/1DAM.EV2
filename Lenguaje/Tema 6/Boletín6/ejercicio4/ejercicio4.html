@@ -19,7 +19,6 @@
         table{
             width: 80%;
             border-collapse: collapse;
-            caption-side: bottom;
             font-family: "robotoRegular", Arial, sans-serif, helvetica;
         }
 
@@ -33,11 +32,29 @@
         }
 
         tbody tr td:nth-child(2){
-            width: 15%;
+            width: 10%;
+            text-align: left;
         }
 
         tbody tr:nth-child(odd){
             background-color: lightgrey;
+        }
+
+        tbody tr td{
+            border-bottom: 3px solid white;
+            width: 3%;
+        }
+
+        tbody tr:first-child{
+            width: 1%;
+        }
+
+        tbody:last-child{
+            border-bottom: 3px solid grey;
+        }
+
+        tfoot:first-child{
+            border-top: 2px solid grey;
         }
 
         td{
@@ -53,12 +70,23 @@
             border-left: 3px solid green;
         }
 
+        .uefa{
+            border-left: 3px solid orange;
+        }
+
+        .ultimos{
+            border-left: 3px solid red;
+        }
+
     </style>
 
 </head>
 <body>
     <table>
         <thead>
+
+            <tr></tr>
+
             <tr>
                 <td></td>
                 <td>EQUIPOS</td>
@@ -89,7 +117,7 @@
         <tbody>
             <tr>
                 <td class="primeros">1</td>
-                <td><img src="img/fcb.png" alt="Escudo del Barcelona"> Barcelona</td>
+                <td><img src="img/fcb.png" alt="Escudo del Barcelona">Barcelona</td>
                 <td>54</td>
                 <td>24</td>
                 <td>16</td>
@@ -138,7 +166,493 @@
                 <td>14</td>
                 <td>10</td>
             </tr>
+
+            <tr>
+                <td class="primeros">3</td>
+                <td><img src="img/rma.png" alt="Escudo del Real Madrid">Real Madrid</td>
+                <td>45</td>
+                <td>24</td>
+                <td>14</td>
+                <td>3</td>
+                <td>7</td>
+                <td>41</td>
+                <td>29</td>
+                <td>25</td>
+                <td>12</td>
+                <td>8</td>
+                <td>1</td>
+                <td>3</td>
+                <td>19</td>
+                <td>7</td>
+                <td>20</td>
+                <td>12</td>
+                <td>6</td>
+                <td>2</td>
+                <td>4</td>
+                <td>22</td>
+                <td>22</td>
+            </tr>
+
+            <tr>
+                <td class="primeros">4</td>
+                <td><img src="img/sfc.png" alt="Escudo del Sevilla">Sevilla</td>
+                <td>37</td>
+                <td>24</td>
+                <td>10</td>
+                <td>7</td>
+                <td>7</td>
+                <td>38</td>
+                <td>28</td>
+                <td>24</td>
+                <td>11</td>
+                <td>7</td>
+                <td>3</td>
+                <td>1</td>
+                <td>20</td>
+                <td>8</td>
+                <td>13</td>
+                <td>13</td>
+                <td>3</td>
+                <td>4</td>
+                <td>6</td>
+                <td>18</td>
+                <td>20</td>
+            </tr>
+
+            <tr>
+                <td class="uefa">5</td>
+                <td><img src="img/get.png" alt="Escudo del Getafe">Getafe</td>
+                <td>36</td>
+                <td>24</td>
+                <td>9</td>
+                <td>9</td>
+                <td>6</td>
+                <td>30</td>
+                <td>21</td>
+                <td>19</td>
+                <td>11</td>
+                <td>6</td>
+                <td>1</td>
+                <td>4</td>
+                <td>16</td>
+                <td>7</td>
+                <td>17</td>
+                <td>13</td>
+                <td>3</td>
+                <td>8</td>
+                <td>2</td>
+                <td>14</td>
+                <td>14</td>
+            </tr>
+
+            <tr>
+                <td class="uefa">6</td>
+                <td><img src="img/ala.png" alt="Escudo del Alavés">Alavés</td>
+                <td>36</td>
+                <td>24</td>
+                <td>10</td>
+                <td>6</td>
+                <td>8</td>
+                <td>25</td>
+                <td>28</td>
+                <td>22</td>
+                <td>11</td>
+                <td>6</td>
+                <td>4</td>
+                <td>1</td>
+                <td>13</td>
+                <td>7</td>
+                <td>14</td>
+                <td>13</td>
+                <td>4</td>
+                <td>2</td>
+                <td>7</td>
+                <td>12</td>
+                <td>21</td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td><img src="img/rso.png" alt="Escudo del R.Sociedad">R.Sociedad</td>
+                <td>34</td>
+                <td>24</td>
+                <td>9</td>
+                <td>7</td>
+                <td>8</td>
+                <td>30</td>
+                <td>25</td>
+                <td>16</td>
+                <td>12</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>14</td>
+                <td>12</td>
+                <td>18</td>
+                <td>12</td>
+                <td>5</td>
+                <td>3</td>
+                <td>4</td>
+                <td>16</td>
+                <td>13</td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td><img src="img/bet.png" alt="Escudo del Betis">Betis</td>
+                <td>33</td>
+                <td>24</td>
+                <td>9</td>
+                <td>6</td>
+                <td>9</td>
+                <td>27</td>
+                <td>30</td>
+                <td>22</td>
+                <td>13</td>
+                <td>6</td>
+                <td>4</td>
+                <td>3</td>
+                <td>17</td>
+                <td>15</td>
+                <td>11</td>
+                <td>11</td>
+                <td>3</td>
+                <td>2</td>
+                <td>6</td>
+                <td>10</td>
+                <td>15</td>
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td><img src="img/val.png" alt="Escudo del Valencia">Valencia</td>
+                <td>32</td>
+                <td>24</td>
+                <td>6</td>
+                <td>14</td>
+                <td>4</td>
+                <td>24</td>
+                <td>20</td>
+                <td>18</td>
+                <td>13</td>
+                <td>3</td>
+                <td>9</td>
+                <td>1</td>
+                <td>14</td>
+                <td>8</td>
+                <td>14</td>
+                <td>11</td>
+                <td>3</td>
+                <td>5</td>
+                <td>3</td>
+                <td>10</td>
+                <td>12</td>
+            </tr>
+
+            <tr>
+                <td>10</td>
+                <td><img src="img/gra.png" alt="Escudo del Granada">Granada</td>
+                <td>31</td>
+                <td>24</td>
+                <td>7</td>
+                <td>10</td>
+                <td>7</td>
+                <td>33</td>
+                <td>34</td>
+                <td>23</td>
+                <td>13</td>
+                <td>6</td>
+                <td>5</td>
+                <td>2</td>
+                <td>24</td>
+                <td>15</td>
+                <td>8</td>
+                <td>11</td>
+                <td>1</td>
+                <td>5</td>
+                <td>5</td>
+                <td>9</td>
+                <td>19</td>
+            </tr>
+
+            <tr>
+                <td>11</td>
+                <td><img src="img/lev.png" alt="Escudo del Levante">Levante</td>
+                <td>30</td>
+                <td>24</td>
+                <td>8</td>
+                <td>6</td>
+                <td>10</td>
+                <td>35</td>
+                <td>43</td>
+                <td>15</td>
+                <td>11</td>
+                <td>4</td>
+                <td>3</td>
+                <td>4</td>
+                <td>17</td>
+                <td>21</td>
+                <td>15</td>
+                <td>13</td>
+                <td>4</td>
+                <td>3</td>
+                <td>6</td>
+                <td>19</td>
+                <td>22</td>
+            </tr>
+
+            <tr>
+                <td>12</td>
+                <td><img src="img/mll.png" alt="Escudo del Mallorca">Mallorca</td>
+                <td>29</td>
+                <td>24</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>25</td>
+                <td>30</td>
+                <td>20</td>
+                <td>11</td>
+                <td>5</td>
+                <td>5</td>
+                <td>1</td>
+                <td>15</td>
+                <td>9</td>
+                <td>9</td>
+                <td>13</td>
+                <td>2</td>
+                <td>3</td>
+                <td>8</td>
+                <td>10</td>
+                <td>21</td>
+            </tr>
+
+            <tr>
+                <td>13</td>
+                <td><img src="img/esp.png" alt="Escudo del Espanyol">Espanyol</td>
+                <td>29</td>
+                <td>24</td>
+                <td>8</td>
+                <td>5</td>
+                <td>11</td>
+                <td>27</td>
+                <td>37</td>
+                <td>21</td>
+                <td>11</td>
+                <td>7</td>
+                <td>0</td>
+                <td>4</td>
+                <td>15</td>
+                <td>16</td>
+                <td>8</td>
+                <td>13</td>
+                <td>1</td>
+                <td>5</td>
+                <td>7</td>
+                <td>12</td>
+                <td>21</td>
+            </tr>
+
+            <tr>
+                <td>14</td>
+                <td><img src="img/ath.png" alt="Escudo del Athletic">Athletic</td>
+                <td>27</td>
+                <td>24</td>
+                <td>5</td>
+                <td>12</td>
+                <td>6</td>
+                <td>23</td>
+                <td>28</td>
+                <td>18</td>
+                <td>12</td>
+                <td>4</td>
+                <td>6</td>
+                <td>2</td>
+                <td>12</td>
+                <td>12</td>
+                <td>9</td>
+                <td>11</td>
+                <td>1</td>
+                <td>6</td>
+                <td>4</td>
+                <td>11</td>
+                <td>16</td>
+            </tr>
+
+            <tr>
+                <td>15</td>
+                <td><img src="img/osa.png" alt="Escudo del Osasuna">Osasuna</td>
+                <td>27</td>
+                <td>24</td>
+                <td>6</td>
+                <td>9</td>
+                <td>9</td>
+                <td>23</td>
+                <td>34</td>
+                <td>11</td>
+                <td>12</td>
+                <td>2</td>
+                <td>5</td>
+                <td>5</td>
+                <td>11</td>
+                <td>18</td>
+                <td>16</td>
+                <td>12</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>14</td>
+                <td>15</td>
+            </tr>
+
+            <tr>
+                <td>16</td>
+                <td><img src="img/cad.png" alt="Escudo del Cádiz">Cádiz</td>
+                <td>26</td>
+                <td>24</td>
+                <td>6</td>
+                <td>8</td>
+                <td>10</td>
+                <td>19</td>
+                <td>29</td>
+                <td>12</td>
+                <td>11</td>
+                <td>3</td>
+                <td>3</td>
+                <td>5</td>
+                <td>10</td>
+                <td>13</td>
+                <td>14</td>
+                <td>13</td>
+                <td>3</td>
+                <td>5</td>
+                <td>5</td>
+                <td>9</td>
+                <td>16</td>
+            </tr>
+
+            <tr>
+                <td>17</td>
+                <td><img src="img/cel.png" alt="Escudo del Celta">Celta</td>
+                <td>24</td>
+                <td>24</td>
+                <td>6</td>
+                <td>6</td>
+                <td>12</td>
+                <td>36</td>
+                <td>43</td>
+                <td>16</td>
+                <td>13</td>
+                <td>4</td>
+                <td>4</td>
+                <td>5</td>
+                <td>19</td>
+                <td>18</td>
+                <td>8</td>
+                <td>11</td>
+                <td>2</td>
+                <td>2</td>
+                <td>7</td>
+                <td>17</td>
+                <td>25</td>
+            </tr>
+
+            <tr>
+                <td class="ultimos">18</td>
+                <td><img src="img/vil.png" alt="Escudo del Villareal">Villareal</td>
+                <td>23</td>
+                <td>24</td>
+                <td>4</td>
+                <td>11</td>
+                <td>9</td>
+                <td>26</td>
+                <td>31</td>
+                <td>12</td>
+                <td>13</td>
+                <td>2</td>
+                <td>6</td>
+                <td>5</td>
+                <td>16</td>
+                <td>17</td>
+                <td>11</td>
+                <td>11</td>
+                <td>2</td>
+                <td>5</td>
+                <td>4</td>
+                <td>10</td>
+                <td>14</td>
+            </tr>
+
+            <tr>
+                <td class="ultimos">19</td>
+                <td><img src="img/rva.png" alt="Escudo del Rayo">Rayo</td>
+                <td>23</td>
+                <td>24</td>
+                <td>6</td>
+                <td>5</td>
+                <td>13</td>
+                <td>27</td>
+                <td>41</td>
+                <td>13</td>
+                <td>13</td>
+                <td>3</td>
+                <td>4</td>
+                <td>6</td>
+                <td>20</td>
+                <td>27</td>
+                <td>10</td>
+                <td>11</td>
+                <td>3</td>
+                <td>1</td>
+                <td>7</td>
+                <td>7</td>
+                <td>14</td>
+            </tr>
+
+            <tr>
+                <td class="ultimos">20</td>
+                <td><img src="img/elc.png" alt="Escudo del Elche">Elche</td>
+                <td>18</td>
+                <td>24</td>
+                <td>4</td>
+                <td>6</td>
+                <td>13</td>
+                <td>23</td>
+                <td>39</td>
+                <td>10</td>
+                <td>11</td>
+                <td>2</td>
+                <td>4</td>
+                <td>5</td>
+                <td>12</td>
+                <td>15</td>
+                <td>8</td>
+                <td>12</td>
+                <td>2</td>
+                <td>2</td>
+                <td>8</td>
+                <td>11</td>
+                <td>24</td>
+            </tr>
         </tbody>
+
+        <tfoot>
+            <tr>
+                <td class="primeros">Champions League</td>
+                <td class="uefa">Europa League</td>
+                <td class="ultimos">Descenso</td>
+                <td>PT: Puntos Totales</td>
+                <td>PJ: Partidos Jugados</td>
+                <td>PG: Partidos Ganados</td>
+            </tr>
+
+            <tr>
+                <td>PE: Partidos Empatados</td>
+                <td>PP: Partidos Perdidos</td>
+                <td>GF: Goles a favor</td>
+                <td>GC: Goles en contra</td>
+            </tr>
+        </tfoot>
 
     </table>
 </body>
