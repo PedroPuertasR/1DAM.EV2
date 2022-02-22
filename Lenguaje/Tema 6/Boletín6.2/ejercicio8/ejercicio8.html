@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+
+    <style type="text/css">
+        
+        fieldset{
+            border: 0px;
+            display: flex;
+            flex-direction: column;
+            width: 100px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h2>Hotel Pepe</h2>
+
+    <form method="post" action="#">
+        <fieldset>
+            <label for="personas">Número de huéspedes</label>
+            <input type="number" name="personas" min="1" max="10" step="1" value="1" size="2">
+        </fieldset>
+
+        <fieldset>
+            <label for="fechain">Fecha de entrada</label>
+            <input type="date" name="fechain" id="fechain" min="2022-02-23" max="2022-08-31">
+
+            <label for="fechaout">Fecha de salida</label>
+            <input type="date" name="fechaout" id="fechaout" min="2022-02-25" max="2022-08-31">
+        </fieldset>
+
+        <fieldset>
+            <label for=""></label>
+        </fieldset>
+    </form>
+
+</body>
+</html>
