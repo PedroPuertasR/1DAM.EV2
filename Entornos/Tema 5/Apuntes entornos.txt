@@ -1,0 +1,51 @@
+-encoding UTF-8 -charset UTF-8 -docencoding UTF-8
+
+Voy a comentar el ejercicio del examen de métodos y arrays de objetos.
+
+
+Tenemos el paquete ejercicio y el paquete lectura.
+
+Tenemos 3 clases: la Principal para probar el programa, la clase Pisos donde tenemos todos los atributos y la clase Inmobiliaria donde se encuentran los métodos
+para realizar todas las operaciones que nos piden.
+
+
+
+Se pide:
+
+- Crear un array de pisos cuyos atributos son la direccion, los metros cuadrados, si está o no reformado y el precio.
+- Crear una variable estática para sumar el total de la recaudacion de los pisos.
+
+
+
+Tendremos que crear los siguientes métodos:
+
+- Añadir un nuevo piso al array.
+- Calcular descuento de un piso.
+- Calcular el precio del metro cuadrado en dolares.
+- Calcular la ganancia de la empresa que vende el piso con un porcentaje que le pasemos nosotros.
+- Calcular la ganancia total si vendieramos los pisos con un mismo porcentaje.
+- Imprimir por pantalla los datos de todos los pisos no reformados.
+
+
+Metodos que comentar:
+
+- calcularGanancia
+- calcularDescuento
+- calcularMetro
+- 
+
+Metodos a comentar dentro:
+
+- calcularMetroCuadrado --> división entre el precio y los metros cuadrados del piso.
+
+
+
+Recuerda usar:
+
+- @param
+- @return
+- @see
+
+Al hacer el javadoc:
+
+@deprecated es para aquellos métodos que esten desfasados y queramos indicarlo en el javadoc.
