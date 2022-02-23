@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>NoMePongoEsoNiLoc@</title>
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Lacquer&display=swap" rel="stylesheet">
+	</head>
+	<style type="text/css">
+		/*	COLORES: ;
+				- Fondo general:  #FF6F61;
+				- Fondos naranjas: #FE840E;
+				- Amarillos:  yellow;
+				- Blancos:  white;
+				- Azul:  blueviolet;
+
+			FUENTE:  Lacquer (está incluida a través de la etiqueta link);
+		*/
+		table{
+			width: 65%;
+			text-align: center;
+			vertical-align: bottom;
+			border: 3px solid yellow;
+			border-collapse: collapse;
+			color: white;
+		}
+
+		td{
+			border: 2px solid yellow;
+			background-color: #FE840E;
+			vertical-align: center;
+			text-align: center;
+		}
+
+		th{
+			border: 2px solid yellow;
+			background-color: #FE840E;
+			vertical-align: center;
+			text-align: center;
+		}
+
+		thead{
+			font-weight: 900;
+			font-size: 14pt;
+		}
+
+		tr:first-child{
+			width: 55%;
+		}
+
+		.otrosdest{
+			width: 15%;
+		}
+
+		body{
+			background-color: #FF6F61;
+		}
+
+		fieldset{
+			border: 3px solid yellow;
+			background-color: #FE840E;
+		}
+
+		legend{
+			background-color: #FE840E;
+			border: 3px solid yellow;
+		}
+
+		.tematicaja{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			flex-basis: 200px;
+		}
+
+		#peticion{
+			width: 300px;
+			height: 200px;
+		}
+
+
+	</style>
+	<body>
+		<h1>NoMePongoEsoNiLoc@</h1>
+		<h2>Alquiler online de disfraces</h2>
+		<form>
+			<fieldset>
+				<legend>Elija su disfraz</legend>
+
+				<label for="alquiler">¿Qué tipo de alquiler desea?</label>
+				<input type="text" name="alquiler" id="alquiler" list="opciones" required>
+				<datalist>
+					<option value="Completo"></option>
+					<option value="Máscara"></option>
+					<option value="Traje"></option>
+				</datalist>
+				<br>
+				
+				<label for="genero">Indique su género</label>
+				<input type="radio" name="genero" id="genero" value="H" required>Hombre
+				<input type="radio" name="genero" id="genero" value="M" required>Mujer
+				<input type="radio" name="genero" id="genero" value="NB" required>No binario
+				<br>
+
+				<label for="reservaini">Inicio de la reserva</label> 
+				<input type="date" id="reservaini" name="reservaini" required>
+				<label for="reservafin">Fin de la reserva</label> 
+				<input type="date" id="reservafin" name="reservafin" required>
+				<br><br>
+
+				<label for="tematica">¿Qué temática de disfraz desea alquilar?</label><br>
+				<div class="tematicaja">
+					<input type="checkbox" name="animales"><label for="animales">Animales</label> 
+					<input type="checkbox" name="profesiones"><label for="profesiones">Profesiones</label> 
+					<input type="checkbox" name="deportes"><label for="deportes">Deportes</label> 
+					<input type="checkbox" name="plantas"><label for="plantas">Plantas</label> 
+					<input type="checkbox" name="peliculas"><label for="peliculas">Peliculas</label> 
+					<input type="checkbox" name="perlibros"><label for="perlibros">Personajes de libro</label> 
+					<input type="checkbox" name="peranimados"><label for="peranimados">Personajes de dibujos animados</label> 
+					<input type="checkbox" name="perhistoricos"><label for="perhistoricos">Personajes históricos</label> 
+					<input type="checkbox" name="objetoscot"><label for="objetoscot">Objetos cotidianos</label> 
+					<input type="checkbox" name="vehiculos"><label for="vehiculos">Vehículos</label> 
+					<input type="checkbox" name="culturas"><label for="culturas">Otras culturas</label> 
+					<input type="checkbox" name="inclasi"><label for="inclasi">Inclasificables</label> 
+				</div> <br><br>
+				
+				
+				<label for="peticion">¿Desea indicarnos alguna petición especial?</label><br>
+				<input type="textarea" name="peticion" id="peticion" cols="50" rows="15" autofocus>
+			</fieldset><br>
+			<fieldset>
+				<legend>Indique sus datos personales</legend><br><br>
+				<label for="nombreyape">Nombre y apellidos</label>
+				<input type="text" id="nombreyape" name="nombreyape" placeholder="Su nombre y apellidos" required maxlength="200"><br><br>
+				<label for="correo">Correo Electrónico</label>
+				<input type="email" name="correo" id="correo" required><br><br>
+				<label for="codpostal">Código Postal</label>
+				<input type="text" name="codpostal" id="codpostal" maxlength="5" size="5" pattern="[0-9]{5}" required placeholder="41024"><br><br>
+				<label for="tlf">Teléfono de contacto</label>
+				<input type="text" name="tlf" id="tlf" maxlength="9" size="9" pattern="[0-9]{9}" required placeholder="954123123"><br>
+
+			</fieldset><br>
+			<fieldset>
+				<legend>Indique sus datos de pago</legend>
+				<label for="tarjeta">Número de tarjeta</label>
+				<input type="text" name="tarjeta" id="tarjeta" maxlength="16" size="16" pattern="[0-9]{16}"required placeholder="16 cifras sin espacios"><br><br>
+				<label for="fcad">Fecha de Caducidad</label>
+				<input type="month" name="fcad" id="fcad"><br><br>
+				<label for="ccv">Código de Seguridad (CCV)</label>
+				<input type="text" name="ccv" id="ccv" maxlength="3" size="3" pattern="[0-9]{3}" required placeholder="123"><br><br>
+			</fieldset><br>
+			
+			<p>
+				<input type="submit" name="submit" value="Solicitar Reserva">
+				<input type="reset" name="reset" value="Borrar datos">
+			</p>
+		</form>
+
+		<hr />
+
+		<table>
+			<thead>
+				<th colspan="4">Tarifas 2022</th>			
+				<tr>
+					<th>Categoría</th>
+					<th>Traje</th>
+					<th>Máscara</th>
+					<th>Completo</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr>
+					<td>Animales, plantas, objetos</td>
+					<td>15€</td>
+					<td>15€</td>
+					<td>25€</td>
+				</tr>
+				
+				<tr>
+					<td>Personas y personajes</td>
+					<td>10€</td>
+					<td>10€</td>
+					<td>15€</td>
+				</tr>
+				
+				<tr>
+					<td>Vehículos</td>
+					<td>15€</td>
+					<td>15€</td>
+					<td>25€</td>
+				</tr>
+				
+				<tr>
+					<td>Inclasificables</td>
+					<td>20€</td>
+					<td>20€</td>
+					<td>35€</td>
+				</tr>
+				
+				<tr>
+					<td rowspan="2">Envío</td>
+					<td colspan="3">Península: 10€.</td>
+				</tr>
+						
+				<tr class="otrosdest">
+					<td colspan="3">Otros destinos: consultar</td>					
+				</tr>
+			</tbody>	
+				
+					
+				<tfoot>
+					<tr>
+						<td colspan="4">NOTA: Todos los precios son por día de alquiler, incluyen IVA, servicio de limpieza y desinfección.
+							Envío no incluido
+						</td>
+					</tr>
+				</tfoot>
+						
+		</table>
+	</body>
+</html>
