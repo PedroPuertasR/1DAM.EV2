@@ -29,13 +29,14 @@ ORDER BY COUNT(employee_id) DESC;
 
 -- Ejercicio 5
 
-SELECT salary, COUNT(employee_id)
+SELECT salary, COUNT(employee_id) AS "numero_empleados"
 FROM employees
 GROUP BY salary
-HAVING COUNT(salary) = (SELECT MAX(val)
-					    FROM (SELECT COUNT(salary) AS "val"
-							  FROM employees
-							  GROUP BY salary
-							 ) datos
-					   )
-ORDER BY salary DESC;
+ORDER BY COUNT(employee_id) DESC, salary DESC;
+
+-- Ejercicio 6
+
+SELECT COUNT(employee_id) "empleados", EXTRACT(year from hire_date) "anio"
+FROM employees
+GROUP BY EXTRACT(year from hire_date)
+ORDER BY anio;
