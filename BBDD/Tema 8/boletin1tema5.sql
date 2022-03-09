@@ -40,3 +40,20 @@ SELECT COUNT(employee_id) "empleados", EXTRACT(year from hire_date) "anio"
 FROM employees
 GROUP BY EXTRACT(year from hire_date)
 ORDER BY anio;
+
+-- Seleccionar el salario más alto cobrado a la vez por más personas.
+
+SELECT salary, COUNT(employee_id) AS "empleados"
+FROM employees
+GROUP BY salary
+ORDER BY empleados DESC, salary DESC
+LIMIT 1;
+
+-- Usando subconsultas seleccionar el menor salario de los empleados
+
+SELECT salary
+FROM (SELECT salary
+	  FROM employees
+	  GROUP BY salary
+	  ORDER BY salary
+	  LIMIT 1) datos;
