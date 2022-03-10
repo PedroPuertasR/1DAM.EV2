@@ -57,3 +57,31 @@ FROM (SELECT salary
 	  GROUP BY salary
 	  ORDER BY salary
 	  LIMIT 1) datos;
+	
+	
+-- listar los empleados, nombre y salario cuya remuneracion es inferior al promedio esperado para su puesto
+
+SELECT *
+FROM jobs;
+
+SELECT *
+FROM employees;
+
+SELECT first_name, last_name, salary || ' €' AS "salario"
+FROM employees JOIN jobs j1 USING (job_id)
+WHERE salary < (SELECT (min_salary + max_salary)/2
+				FROM jobs j2
+				WHERE j1.job_id = j2.job_id);
+
+
+-- Seleccionar el salario que es cobrado a la vez por más personas. Mostrar dicho salario y el número de personas. CON WITH
+
+WITH agrupacion AS (
+	SELECT salary || ' €' AS "salario", COUNT(employee_id) AS "empleados"
+	FROM employees
+	GROUP BY salary
+	ORDER BY empleados DESC, salary DESC
+	LIMIT 1
+)
+SELECT *
+FROM agrupacion;
