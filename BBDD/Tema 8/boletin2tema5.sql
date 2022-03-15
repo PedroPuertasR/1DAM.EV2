@@ -10,7 +10,9 @@ WITH pedidos AS (
 SELECT *
 FROM pedidos;
 
+
 -- Seleccionar el nombre de las empresas que no han realizado ningún pedido.
+
 
 SELECT DISTINCT company_name
 FROM customers
@@ -19,6 +21,7 @@ WHERE customer_id NOT IN (SELECT DISTINCT customer_id
 						  
 -- Seleccionar la categoría que tiene más productos diferentes solicitados en pedidos.
 -- Mostrar el nombre de la categoría y dicho número.
+
 
 SELECT category_name, COUNT(product_id)
 FROM categories JOIN products USING (category_id)
@@ -45,19 +48,15 @@ FROM beneficio
 GROUP BY category_name, product_name
 ORDER BY category_name, product_name;
 
+
 -- Selecciona aquellos clientes (CUSTOMERS) para los que todos los envíos que ha recibido (sí, todos) 
 -- los haya transportado (SHIPPERS) la empresa United Package.
 
-SELECT *
-FROM shippers;
 
-SELECT *
-FROM orders;
-
-SELECT cu.company_name, COUNT(order_id)
-FROM orders JOIN customers cu USING (customer_id)
-	 JOIN shippers ON (shipper_id = ship_via)
-WHERE ship_via IN (SELECT shipper_id
-				   FROM shippers
-				   WHERE company_name = 'United Package')
-GROUP BY cu.company_name;
+SELECT DISTINCT cu.company_name
+FROM customers cu JOIN orders o USING (customer_id)
+	 JOIN shippers s ON (shipper_id = ship_via)
+WHERE customer_id NOT IN ( SELECT DISTINCT cu.customer_id
+						      FROM customers cu JOIN orders o USING (customer_id)
+	 						  JOIN shippers s ON (shipper_id = ship_via)
+						      WHERE s.company_name != 'United Package');
