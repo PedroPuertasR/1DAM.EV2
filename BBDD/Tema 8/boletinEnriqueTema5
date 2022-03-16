@@ -1,0 +1,24 @@
+-- Ejercicio 1
+
+SELECT *
+FROM suppliers;
+
+SELECT *
+FROM products;
+
+SELECT *
+FROM order_details;
+
+SELECT *
+FROM orders;
+
+SELECT product_id, SUM(quantity)
+FROM order_details
+GROUP BY product_id;
+
+SELECT s.company_name, 
+FROM orders JOIN order_details od USING (order_id)
+	 JOIN products USING (product_id)
+	 JOIN suppliers s USING (supplier_id)
+GROUP BY s.company_name
+ORDER BY total DESC;
