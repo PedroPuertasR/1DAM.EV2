@@ -52,26 +52,34 @@ SELECT * FROM productosDif('Confections');
 -- calcular la cantidad de beneficio que hemos obtenido, agrupado por categoría y producto. 
 -- Las cantidades deben redondearse a dos decimales.
 
+DROP FUNCTION IF EXISTS beneficioProducto;
 
-WITH beneficio AS (
-	SELECT category_name, product_name, quantity * (o.unit_price - o.unit_price * discount) AS "precio_final"
+CREATE OR REPLACE FUNCTION beneficioProducto (varchar)
+RETURNS TABLE (categoria varchar, nombre varchar, beneficio numeric) AS
+$$
+	SELECT category_name, product_name, ROUND(SUM(0.25 * (o.quantity * (o.unit_price - 1 * o.discount)))::numeric, 2) AS "precio_final"
 	FROM order_details o JOIN products USING (product_id)
 		 JOIN categories USING (category_id)
-)
-SELECT category_name, product_name, ROUND(SUM((precio_final * 25/100)::numeric),2) || ' €' AS "beneficio"
-FROM beneficio
-GROUP BY category_name, product_name
-ORDER BY category_name, product_name;
+	GROUP BY category_name, product_name
+	HAVING product_name = $1
+$$ LANGUAGE 'sql';
+
+SELECT * FROM beneficioProducto('Chang');
 
 
 -- Selecciona aquellos clientes (CUSTOMERS) para los que todos los envíos que ha recibido (sí, todos) 
 -- los haya transportado (SHIPPERS) la empresa United Package.
 
+DROP FUNCTION IF EXISTS buscarCustomer;
 
-SELECT DISTINCT cu.company_name
-FROM customers cu JOIN orders o USING (customer_id)
-	 JOIN shippers s ON (shipper_id = ship_via)
-WHERE customer_id NOT IN ( SELECT DISTINCT cu.customer_id
-						      FROM customers cu JOIN orders o USING (customer_id)
-	 						  JOIN shippers s ON (shipper_id = ship_via)
-						      WHERE s.company_name != 'United Package');
+CREATE OR REPLACE FUNCTION buscarCustomer(varchar)
+RETURNS TABLE (empresa varchar, mensajeria varchar) AS
+$$
+	SELECT cu.company_name, s.company_name
+	FROM customers cu JOIN orders o USING (customer_id)
+		 JOIN shippers s ON (shipper_id = ship_via)
+	GROUP BY cu.company_name, s.company_name
+	HAVING cu.company_name = $1
+$$ LANGUAGE 'sql';
+
+SELECT * FROM buscarCustomer('Around the Horn');
