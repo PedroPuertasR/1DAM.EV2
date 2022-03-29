@@ -89,8 +89,9 @@ let letra = prompt("Por favor, indique la letra del DNI:")
 }*/
 
 
+//Ejercicio 6
 
-
+/*
 var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
 let incorrecto;
 
@@ -117,4 +118,61 @@ function comprobarLetraDNI(numDni, letraDni){
     }
 
     return mensaje;
+}
+*/
+
+//Ejercicio 7
+
+/*
+let num = prompt("Indique un número");
+
+if(num > 0 && num < 50){
+    let resultado = 1;
+    for(let i = 1; i <= num; i++){
+        resultado *= i;
+    }
+    alert(resultado);
+
+}else{
+    alert('Por favor indique un número válido.')
+}
+*/
+
+//Ejercicio 8
+
+/*
+let numero = prompt("Indique un número");
+alert(esPar(numero));
+
+function esPar(num){
+    let resultado;
+    if(typeof num == "number"){
+        resultado = num%2 == 0 ? "El número es par": "El número es impar";
+    }else{
+        resultado = "Por favor, indique un número";
+    }
+
+    return resultado;
+}
+*/
+
+//Ejercicio 9
+
+let cad = prompt("indique un texto");
+
+alert(analizarCadena(cad));
+
+function analizarCadena(cadena){
+    let resultado = "La cadena tiene mezcla de mayúsculas y minúsculas";
+    let cadenaMayus = cadena.toUpperCase();
+    let cadenaMinus = cadena.toLowerCase();
+
+    if(cadena ===cadenaMayus){
+        resultado = "La cadena solo tiene mayúsculas";
+    }else if(cadena === cadenaMinus){
+        resultado = "La cadena solo tiene minúsculas";
+    }
+    
+    return resultado;
+
 }
