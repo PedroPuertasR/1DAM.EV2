@@ -49,3 +49,34 @@ HAVING COUNT(order_id) >= ALL(SELECT COUNT(order_id)
 							  GROUP BY employee_id)
 ORDER BY COUNT(order_id) DESC
 LIMIT 5;
+
+/*19.Queremos un listado del promedio de días disponibles para entregar un pedido, agrupando por categoria y producto*/
+
+SELECT category_name, product_name, AVG(AGE(required_date, order_date)) AS "promedio"
+FROM categories JOIN products USING (category_id)
+	 JOIN order_details USING (product_id)
+	 JOIN orders USING (order_id)
+GROUP BY category_name, product_name, order_id;
+
+/*20.Queremos un listado de aquellos empleados que deberían estar jubilados*/
+
+SELECT employee_id, first_name, last_name, AGE(CURRENT_DATE, birth_date)
+FROM employees
+WHERE employee_id NOT IN (SELECT employee_id
+						  FROM employees
+						  WHERE AGE(CURRENT_DATE, birth_date) <= '65 y');
+
+/*21.Queremos un listado del numero de pedidos por fecha para aquellos pedidos de productos nacionales destinados al extranjero
+en el año 1998*/
+
+SELECT cu.country, su.country, order_date, COUNT(order_id)
+FROM customers cu JOIN orders o USING (customer_id)
+	 JOIN order_details USING (order_id)
+	 JOIN products USING (product_id)
+	 JOIN suppliers su USING (supplier_id)
+WHERE TO_CHAR(order_date, 'YYYY') = '1998'
+	  AND su.country != ALL (SELECT country
+							 FROM customers JOIN orders o2 USING (customer_id)
+							 WHERE o2.order_id = o.order_id)
+GROUP BY cu.country, su.country, order_date
+ORDER BY order_date;
