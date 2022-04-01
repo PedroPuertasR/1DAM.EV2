@@ -19,3 +19,13 @@ function sumar(){
 
 alert('El total de la suma es: '+ sumar());
 
+let numero = +prompt('Introduzca un número:')
+while(isFinite(numero)&&numero>0){
+    suma -=array.shift();
+    suma += numero;
+    array.push(numero);
+
+    alert(array + ";suma:" + suma);
+    numero = +prompt("Introduzca un número:");
+}
+
