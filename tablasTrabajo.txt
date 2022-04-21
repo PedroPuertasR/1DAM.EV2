@@ -1,0 +1,6 @@
+Usuarios
+Departamentos
+Empleados
+Zonas
+Reservas
+Salas
