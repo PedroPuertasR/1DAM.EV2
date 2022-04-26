@@ -1,0 +1,25 @@
+-- Ejercicio 1
+
+CREATE OR REPLACE FUNCTION calcularTabla(integer)
+RETURNS TABLE (uno integer,
+			   dos integer,
+			   tres integer) AS
+$$
+	
+	(SELECT generate_series.*, $1, generate_series.* * $1
+	 FROM generate_series(1,10));
+$$ LANGUAGE sql;
+
+
+-- Ejercicio 2.1
+
+CREATE OR REPLACE FUNCTION mostrarHabitantes(inicio integer, fin integer, OUT numeric)
+AS
+$$
+	SELECT AVG(hombres + mujeres), provincia
+	FROM demografia_basica
+	WHERE anio BETWEEN $1 AND $2
+	GROUP BY provincia
+$$ LANGUAGE sql;
+
+SELECT * FROM calcularTabla(3);
