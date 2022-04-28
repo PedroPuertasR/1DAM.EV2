@@ -1,5 +1,11 @@
+Usuarios
+	- id
+	- nombre (100)
+	- contrasenia
+	- admin (boolean)
 Clientes
 	- id
+	- id_usuario (FK)
 	- nombre (100)
 	- apellidos (200)
 	- dni (9)
@@ -11,10 +17,12 @@ Departamentos
 	- nombre(100)
 Zonas
 	- id
-	- nombre
+	- nombre (100)
 	- precio_fianza
 Empleados
 	- id
+	- id_usuario (FK)
+	- departamento (FK)
 	- nombre (100)
 	- apellidos (200)
 	- telefono (13)
@@ -23,7 +31,6 @@ Empleados
 	- seguridad_social
 	- IBAN (34)
 	- salario
-	- departamento (FK)
 	- activo
 Salas
 	- id_sala
@@ -37,5 +44,6 @@ Reservas
 	- id_zona (FK)
 	- fecha_reserva
 	- precio_fianza (FK)
+	- precio_disenio
 	- descuento (0-100)
 	- precio_total

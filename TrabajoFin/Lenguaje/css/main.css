@@ -3,18 +3,6 @@
     src: url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@900&display=swap');
 }
 
-@keyframes animacionMenu {
-    0%{
-        height: 0px;
-        transform: scaleY(0%);
-    }
-
-    100%{
-        height: 100%;
-        transform: scaleY(100%);
-    }
-}
-
 body{
     background-color: black!important;
 }
@@ -51,16 +39,6 @@ h1, p{
     background-color: black!important;
 }
 
-#menu{
-    visibility: hidden;
-}
-
-#menu:target{
-    animation: animacionMenu ease-in 0.5s;
-    visibility: visible;
-}
-
-#artistas:target #menu,
-#contacto:target #menu {
-    visibility: visible;
+#logoMenu{
+    height: 80px;
 }

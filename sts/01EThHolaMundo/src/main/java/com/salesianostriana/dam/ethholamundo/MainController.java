@@ -65,7 +65,6 @@ public class MainController {
 	
 	
 	@GetMapping("/saludo3") 
-	
 	public String welcome3 (Model model){
 		
         model.addAttribute("saludo", "Hola Mundo!!!");
