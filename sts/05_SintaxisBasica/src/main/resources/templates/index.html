@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<!-- No olvides incluir el espacio de nombres de th en todos tus archivos html -->
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Bootstrap 101 Template</title>
+
+<!-- Bootstrap -->
+<!-- Copia y pega estos links de Bootstrap y añade las dependencias que hay en el pom.xml sobre webjars
+mientras se ve en clase cómo vamos a trabajar en lugar de usar webjars -->
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="text-center">Ejemplos de uso de expresiones</h1>
+				<hr />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Expresiones literales</h2>
+				
+<!-- Como puedes ver en el tutorial de th, para escibir texto basta con poner th:text= y entre 
+comillas dobles escribir el símbolo del dólar, llaves y lo que quieras escibir siguiendo la sintáxis propuesta, por ejemplo,
+comillas simples para texto tal cual lo escribimos, sin nada para un número, el nombre de una variable
+como por ejemplo, today. Puedes ver que el valor de esta variable se ha cogido para el ejemplo, dentro del controller, 
+añadiendo al atributo con model.addAttribute("today", LocalDate.now ()); -->
+				<ul>
+					<li><strong>Número literal:</strong> <span th:text="${2}">número</span></li>
+					<li><strong>Texto literal:</strong> <span
+						th:text="${'Hola a todos'}">texto</span></li>
+					<li><strong>Booleano literal:</strong> <span th:text="${true}">booleano</span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Expresiones variables</h2>
+				<ul>
+					<li><strong>Expresión variable (${today}):</strong> <span
+						th:text="${today}">variable 1</span></li>
+					<li><strong>Expresión variable (${nombre}):</strong> <span
+						th:text="${nombre}">variable 2</span></li>
+					<li><strong>Expresión variable (${producto.nombre}):</strong>
+						<span th:text="${nombre}">variable 3</span></li>
+					<li><strong>Expresión variable
+							(${producto['descripcion']}):</strong> <span
+						th:text="${producto['descripcion']}">variable 4</span></li>
+					<li><strong>Expresión variable (${lista[1].precio}):</strong>
+						<span th:text="${lista[1].precio}">variable 5</span></li>
+					<li><strong>Expresión variable (${lista.size()}):</strong> <span
+						th:text="${lista.size()}">variable 6</span></li>
+					<li><strong>Expresión variable (${map.p4.nombre}):</strong> <span
+						th:text="${map.p4.nombre}">variable 7</span></li>
+
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Expresiones de selección</h2>
+				
+<!-- Dentro de una etiqueta, podemos ahorrar código si lo que queremos es mostrar, por ejemplo, campos o atributos de un objeto
+seleccionando primero el objeto y luego escribir solo los nombres de los campos o atributos, es decir:
+Escribimos th:object="${nombre del objeto}"
+Así dentro de esa etiqueta, solo tendremos que escribir para cada artibuto que queramos mostrar (ojo, con asterisco)
+
+th:text="*{nombre del atributo}" en lugar de estar todo el tiempo teniendo que escribir la palabra producto antes de 
+sus campos
+
+th:text="${producto.nombre}
+th:text="${producto.precio}
+ -->
+				<div th:object="${producto}">
+					<ul>
+						<li><strong>Nombre: (*{nombre})</strong><span
+							th:text="*{nombre}">nombre</span></li>
+						<li><strong>Descripción (*{descripcion}): </strong><span
+							th:text="*{descripcion}">descripcion</span></li>
+						<li><strong>Precio (*{precio}): </strong><span
+							th:text="*{precio}">precio</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Expresiones de utilidad</h2>
+				<h5>Solo incluimos unos pocos ejemplos de la ingente cantidad
+					que hay disponible</h5>
+				<ul>
+					<li><strong>Expresión de utilidad
+							(${#strings.toUpperCase(nombre)})</strong> <span
+						th:text="${#strings.toUpperCase(nombre)}">utilidad 1</span></li>
+					<li><strong>Expresión de utilidad
+							(${#strings.prepend(nombre,'D. ')})</strong> <span
+						th:text="${#strings.prepend(nombre,'D. ')}">utilidad 2</span></li>
+					<li><strong>Expresión de utilidad
+							(${#numbers.formatDecimal(producto.precio,3,2,'POINT')})</strong> 
+							<!-- Explicado en el ejemplo 02EThExpresiones Plantilla Bucle y Formateo
+							
+							 -->
+							
+							<span
+						th:text="${#numbers.formatDecimal(producto.precio,3,2,'POINT')}">utilidad
+							3</span> €</li>
+					<li><strong>Expresión de utilidad
+							(${#numbers.formatCurrency(producto.precio)})</strong> <span
+						th:text="${#numbers.formatCurrency(producto.precio)}">utilidad
+							3</span></li>
+					<li><strong>Expresión de utilidad
+							(${#numbers.formatPercent(0.01, 1, 0)})</strong> <span
+						th:text="${#numbers.formatPercent(0.01, 1, 0)}">utilidad
+							3</span></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
