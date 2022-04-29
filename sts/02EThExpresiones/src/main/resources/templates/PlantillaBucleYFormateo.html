@@ -1,0 +1,125 @@
+<!doctype html>
+
+<!-- Recordad que para poder usar Thymeleaf dentro de la plantilla HTML, es decir, que se reconozcan las etiquetas
+propias de TH añadimos la siguiente línea, se llama espacio de nombres -->
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!-- Agregamos el link para el css (es uno cutre usado por el tutorial interactivo de Th)
+Se han agregado los ficheros css dentro de la carpeta static y a su vez dentro de otra llamada css
+Hay que poner los dos href, estático y para th
+
+Como ya se ha dicho en clase, dentro de static deben ir las carpetas para guardar imágenes, css, javaScript, fonts...
+ -->
+
+<link rel="stylesheet" href="/css/main-static.css"
+	th:href="@{/css/main.css}" />
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS 
+
+Esto se explica en los videos ya vistos sobre Webjars. No las vamos a usar pero miesntras tanto, podéis copiar y pegar esto en todas las plantaillas y 
+añadir las 3 dependencias de webjar en el pom.xml
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>4.4.1-1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator</artifactId>
+			<version>0.40</version>
+		</dependency>
+
+
+-->
+
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+
+<title>Primer bucle y formateo de variables</title>
+</head>
+<body>
+
+	<h1>Thymeleaf tutorial - Answer for exercise 8: conditions</h1>
+	<h2>Lista de productos</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Number</th>
+				<th>Description</th>
+				<th>Price</th>
+				<th>Available from</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<!-- Para mostrar varios productos o partes de varios productos, como puede ser un listado,
+            se usará un bucle que pintará una fila en cada iteración, que en Thymeleaf (en adelante usaré solo Th para nombrar Thyemelaf por facilidad 
+            de escritura) se escribe con la etiqueta th:each.
+            Tiene la misma estructura que un for each de Java, es decir, "objeto sacado de la lista: 
+            (al que en nuestro caso llamamos product y dentro del bucle debemos usar esta palabra para 
+            acceder a cada elemento que se saca de la lista) {nombre de la lista (debe ser el mismo nombre 
+            que hemos dado a la lista dentro del método que atiende la petición en la 
+            clase Controller}
+            
+            Como ya vimos en el ejemplo 1, mostramos el atributo description de cada producto que se "vaya sacando" de la lista en cada iteración
+            mediante un punto después del nombre del objeto (es como llamar a getDescription pero sin necesidad de usar get)
+            
+            Cada each lleva internamente una serie de información que podemos mostrar como puede ser el índice del elemento de la lista (empieza en cero), 
+            el count (número de "elemento" que empieza en uno y al que se accede directamente sin necesidad de ponerlo como atributo), etc. 
+                Se puede ver más en el apartado 6.2 del tutorial usinthymeleaf
+            -->
+
+			<tr th:each="product : ${productList}">
+				<td th:text="${productStat.count}"></td>
+				<td th:text="${product.description}">Red chair</td>
+
+				<!-- Para mostrar número con decimales podemos usar esta forma. 
+                    Escribirmos #numbers.formatDecimal (número a mostrar, en nuestro caso, precio de un producto,
+                    número de enteros, número de cifras decimales) En caso de no haber valor, 
+                    se mostrará la parte estática, que es $350 
+                    
+                    Se puede ver que para concatenar cadenas también se usa el signo más, pero lo que se quiere mostrar tan cual, va entre comillas 
+                    simples, en nuestro caso el símbolo del euro que hay justo después de la llave
+                    -->
+
+				<td th:text="${'€' + #numbers.formatDecimal(product.price, 1, 2)}">$350</td>
+
+				<!-- Para la impresión de fechas, usaremos las clases de java.time más adelante, pero de momento lo vemos con la forma 
+                    antigua, java.util y calendar. En este caso, tenemos varios formatos. Para ello, 
+                    usamos #dates.format (fecha a mostrar, en nuestro caso, fecha del atributo producto,
+                    formato para la fecha, en este caso, dd-MMM-yyyy) Se pueden ver más formatos de fechas
+                    y soportados por format en los tutoriales de Thymeleaf -->
+
+				<td th:text="${#dates.format(product.date)}">28-Jun-2013</td>
+				<td><span class="offer">Special offer!</span></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="/webjars/jquery/jquery.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+</body>
+</html>
