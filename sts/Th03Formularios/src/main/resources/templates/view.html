@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+        <title>Datos</title>
+        <link rel="stylesheet" th:href="@{/css/main2.css}" />
+        <meta charset="utf-8" />
+</head>
+<body>
+ <h2>Información de empleado enviada</h2>
+    <table>
+        <tr>
+            <td>Nombre:</td>
+            <td th:text="${empleado.nombre}"></td>
+        </tr>
+        <tr>
+            <td>ID:</td>
+            <td th:text="${empleado.id}"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td th:text="${empleado.email}"></td>
+        </tr>
+    </table>
+</body>
+</html>

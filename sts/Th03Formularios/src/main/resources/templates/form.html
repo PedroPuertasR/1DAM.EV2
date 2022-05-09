@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+        <title>Ejemplo 1 formularios</title>
+        
+        <!-- Para los ficheros css, como ya hemos visto en clase, en src/main/resources, 
+        dentro de static creamos la carpeta css con new folder, 
+        (valdría también para las imágenes dentro de carpeta images, js, etc. creando diferentes carpetas) 
+        En este caso la ruta es la que sigue
+        Para th:href basta con poner /css/nombre del css -->
+        <link rel="stylesheet" href="../static/css/main-static.css" th:href="@{/css/main2.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <h3>Bienvenido, introduzca los detalles del empleado</h3>
+        
+        <!-- Ojo, el uso de form en Thymeleaf obliga a definir el atributo object dentro de la 
+        etiqueta form. Este object debe llamarse igual que el objeto pasado en el controlador al método subit
+        en el ModelAttribute, en este caso, empleadoForm. 
+        
+        Dentro de este form, se puede acceder a los campos de este object, que no es más
+        que una instancia tipo Empleado con valores en sus atributos recogidos desde los 
+        campos del formulario. Se puede acceder a dichos atributos mediante la 
+        anotación th:field usando asterisco y el nombre del atributo entre llaves.
+        
+        Se puede consultar en el tutorial de Th qué etiquetas o atributos de html NO
+        necesitan el prefijo th, por ejemplo, type no necesita etiqueta Th 
+        El th:action, lleva el nombre de la ruta
+        que hemos puesto en la anotación PostMapping del método submit del controller 
+        No es buena idea que el usuario edite el id, solo está puesto para el ejemplo 
+        -->
+        
+        
+        <form method="POST" th:action="addEmpleado" th:object="${empleadoForm}">
+             <table>
+                <tr>
+                    <td><label for="nombre">Nombre</label></td>
+                    <td><input type="text" th:field="*{nombre}"/></td>
+                </tr>
+                <tr>
+                    <td><label for="id">Id</label></td>
+                    <td><input type="text" th:field="*{id}"/></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td><input type="email" th:field="*{email}"/></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"/></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
