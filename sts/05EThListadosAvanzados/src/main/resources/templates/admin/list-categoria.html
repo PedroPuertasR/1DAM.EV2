@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title></title>
+
+<!-- Bootstrap -->
+
+<!-- Lo mismo que hemos comentado en ejemplos anteriores, 
+copiad los link de vuestros css poniendo las rutas correspondientes en vuestro proyecto ya que 
+este año no usamos webjars -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+<link href="../../static/css/style.css" th:href="@{/css/style.css}"
+	rel="stylesheet" />
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style>
+body {
+	margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">triana.salesianos.edu Shop</a>
+			</div>
+			
+<!-- En el siguiente código, lo único que no es html son los href con th delante:
+Como habéis podido ver en los videos de sintaxis básica, para los enlaces usamos 
+@ y ponemos la ruta entre llaves, todo ello entre comillas dobles como siempre
+th:href="@{/admin/categoria/}"
+En este ejemplo, estamos diciendo que la petición será atendida por el controlador que 
+tiene dicha ruta, es decir,los nombres de las rutas deben coincidir con las que 
+hemos puesto en la anotación @RequestMapping("/admin/categoria") en la clase 
+CategoriaController (igual para la parte de producto)
+ -->			
+			
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Opciones <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/admin/categoria/"
+								th:href="@{/admin/categoria/}">Gestión de categorías</a></li>
+							<li><a href="/admin/producto/" th:href="@{/admin/producto/}">Gestión
+									de productos</a></li>
+						</ul></li>
+				</ul>
+				
+			</div>
+
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-offset-2 col-md-8">				
+				<div class="pull-right">
+					<a href="form-categoria.html" 
+						class="btn btn-primary">Nueva categoría</a>
+
+				</div>
+				
+<!-- Uso de th con la tabla (el código html de la tabla es normal):
+
+* Para pintar cada fila tendremos un bucle th:each que recorrerá la lista categorias 
+(este tienen que ser el nombre que se le da a la lista en el método index 
+del controller CategoriaController: model.addAttribute("categorias", categoriaService.findAll());
+Estas categorías vienen, al ser buscadas por findAll de categoriaService del servicio
+de categoría, que a su vez llama al findAll del repositorio y que devuelve 
+todas las categorías guardas en la base de datos.
+
+* Vamos sacando cada categoría y vamos pintando las distintas columnas:
+
+- Imagen de la categoría o si está vacía una por defecto (se puede ver la explicación 
+de isEmpty en los ejemplos de sintaxis básica así como el uso del 
+operador Elvis en ejemplos anteriores (es un if-else)
+
+- Nombre de la categoría como un text normal (categoria.nombre)
+
+- Dos botones en html sin th para editar o borrar que ahora mismo no tienen funcionalidad
+(borrar muestra un modal al pincharlo)
+
+ -->				
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Imagen</th>
+							<th>Nombre</th>
+							<th>Operaciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="categoria : ${categorias}">
+							<td><img
+								th:src="${not (#strings.isEmpty(categoria.imagen))} ? ${categoria.imagen} : 'https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg'"
+								class="img-responsive icono-categoria" alt="imagen" /></td>
+							<td th:text="${categoria.nombre}"></td>
+							<td class="operaciones"><a href="#"								
+								class="btn btn-primary">Editar</a> 
+								<button type="button" class="btn btn-danger" data-toggle="modal"
+									data-target="#delete-modal">Borrar</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Borrar categoría</h4>
+				</div>
+				<div class="modal-body">
+					<p>¿Está usted seguro de borrar esta categoría?</p>
+					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+					<a href="#" class="btn btn-danger">Sí</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+<!-- Código de webjars para jquery, js y bootstrap del que ya hemos hablado 
+y que no usaremos este curso -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+		th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+		th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+		
+
+
+</body>
+</html>
